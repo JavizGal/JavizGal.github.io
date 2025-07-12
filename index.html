@@ -1,257 +1,247 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Javier Galindo – Portafolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+  <meta charset="UTF-8" />
+  <title>Javier Galindo – Portafolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
-    body {
-      font-family: 'Orbitron', sans-serif;
-      background-color: #000;
-      overflow-x: hidden;
-      cursor: none;
-    }
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background-color: #000;
+      overflow-x: hidden;
+      cursor: none;
+    }
 
-    .neon-text {
-      color: #00f7ff;
-      text-shadow:
-        0 0 5px #00f7ff,
-        0 0 10px #00f7ff,
-        0 0 20px #00f7ff,
-        0 0 40px #00f7ff;
-    }
+    .neon-text {
+      color: #00f7ff;
+      text-shadow:
+        0 0 5px #00f7ff,
+        0 0 10px #00f7ff,
+        0 0 20px #00f7ff,
+        0 0 40px #00f7ff;
+    }
 
-    .neon-button {
-      border: 2px solid #ff0044;
-      padding: 0.75rem 2rem;
-      color: #ff0044;
-      text-shadow: 0 0 10px #ff0044;
-      box-shadow: 0 0 5px #ff0044;
-      transition: all 0.3s ease-in-out;
-      text-decoration: none;
-      display: inline-block;
-    }
+    .neon-button {
+      border: 2px solid #ff0044;
+      padding: 0.75rem 2rem;
+      color: #ff0044;
+      text-shadow: 0 0 10px #ff0044;
+      box-shadow: 0 0 5px #ff0044;
+      transition: all 0.3s ease-in-out;
+      text-decoration: none;
+      display: inline-block;
+    }
 
-    .neon-button:hover {
-      background: #ff0044;
-      color: black;
-      box-shadow: 0 0 20px #ff0044, 0 0 40px #ff0044;
-    }
+    .neon-button:hover {
+      background: #ff0044;
+      color: black;
+      box-shadow: 0 0 20px #ff0044, 0 0 40px #ff0044;
+    }
 
-    .glass-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(0, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
-      transition: 0.3s ease-in-out;
-    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(0, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+      transition: 0.3s ease-in-out;
+    }
 
-    .glass-card:hover {
-      box-shadow: 0 0 30px rgba(255, 0, 100, 0.8);
-      transform: scale(1.03);
-    }
+    .glass-card:hover {
+      box-shadow: 0 0 30px rgba(255, 0, 100, 0.8);
+      transform: scale(1.03);
+    }
 
-    #tsparticles {
-      position: fixed;
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-    }
+    #tsparticles {
+      position: fixed;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+    }
 
-    .cursor {
-      position: fixed;
-      width: 20px;
-      height: 20px;
-      background: #00f7ff;
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 1000;
-      mix-blend-mode: difference;
-      transform: translate(-50%, -50%);
-    }
+    .cursor {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: #00f7ff;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1000;
+      mix-blend-mode: difference;
+      transform: translate(-50%, -50%);
+    }
 
-    #threejs-canvas {
-      position: absolute;
-      inset: 0;
-      z-index: -10;
-      opacity: 0.25;
-      pointer-events: none;
-    }
-  </style>
+    #threejs-canvas {
+      position: absolute;
+      inset: 0;
+      z-index: -10;
+      opacity: 0.25;
+      pointer-events: none;
+    }
+  </style>
 </head>
 <body class="text-white scroll-smooth">
-  <div class="cursor" id="cursor"></div>
-  <div id="tsparticles"></div>
+  <div class="cursor" id="cursor"></div>
+  <div id="tsparticles"></div>
 
-  <section class="h-screen flex flex-col justify-center items-center text-center px-4">
-    <h1 class="text-5xl md:text-7xl neon-text mb-4">
-      <span id="typed"></span>
-    </h1>
-    <p class="text-xl md:text-2xl text-gray-300 mb-8">Trabajo dónde la tecnología respira, decide y se mueve.</p>
-    <a href="#proyectos" class="neon-button">Ver Proyectos</a>
-  </section>
+  <section class="h-screen flex flex-col justify-center items-center text-center px-4">
+    <h1 class="text-5xl md:text-7xl neon-text mb-4">
+      <span id="typed"></span>
+    </h1>
+    <p class="text-xl md:text-2xl text-gray-300 mb-8">Trabajo dónde la tecnología respira, decide y se mueve.</p>
+    <a href="#proyectos" class="neon-button">Ver Proyectos</a>
+  </section>
 
-  <section class="py-20 px-6 md:px-20 max-w-5xl mx-auto">
-    <h2 class="text-4xl neon-text mb-4">Sobre mí</h2>
-    <p class="text-gray-300 leading-loose text-lg">
-      Soy desarrollador web full stack, combinando backend sólido y bases de datos eficientes. Me especializo en tecnologías como PHP, Laravel y bases de datos, pero también he trabajado con Java, C y ESP32 para crear soluciones que integran software, hardware e interacción humana.
-    </p>
-  </section>
+  <section class="py-20 px-6 md:px-20 max-w-5xl mx-auto">
+    <h2 class="text-4xl neon-text mb-4">Sobre mí</h2>
+    <p class="text-gray-300 leading-loose text-lg">
+      Soy desarrollador web full stack, combinando backend sólido y bases de datos eficientes. Me especializo en tecnologías como PHP, Laravel y bases de datos, pero también he trabajado con Java, C y ESP32 para crear soluciones que integran software, hardware e interacción humana.
+    </p>
+  </section>
 
-  <section id="proyectos" class="py-20 px-6 md:px-20 max-w-6xl mx-auto relative">
-    <h2 class="text-4xl text-center neon-text mb-10 relative z-10">Proyectos Épicos</h2>
+  <section id="proyectos" class="py-20 px-6 md:px-20 max-w-6xl mx-auto relative">
+    <h2 class="text-4xl text-center neon-text mb-10 relative z-10">Proyectos Épicos</h2>
 
-    <div id="threejs-canvas"></div>
+    <div id="threejs-canvas"></div>
 
-    <div class="flex flex-col gap-16 relative z-10">
-      <!-- Proyecto 1 -->
-      <div class="glass-card p-6 rounded-xl md:flex md:flex-row items-center gap-6">
-        <div class="flex-1">
-          <h3 class="text-2xl text-pink-500 mb-2">🧠 Predicción de emociones (BPM)</h3>
-          <p class="text-gray-300">App que interpreta emociones humanas a partir de la frecuencia cardíaca en tiempo real.</p>
-        </div>
-      </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 relative z-10">
+      <!-- Proyecto 1 -->
+      <div class="glass-card p-6 rounded-xl">
+        <h3 class="text-2xl text-pink-500 mb-2">🧠 Predicción de emociones (BPM)</h3>
+        <p class="text-gray-300">App que interpreta emociones humanas a partir de la frecuencia cardíaca en tiempo real.</p>
+      </div>
 
-      <!-- Proyecto 2 -->
-      <div class="glass-card p-6 rounded-xl md:flex md:flex-row-reverse items-center gap-6">
-        <div class="flex-1">
-          <h3 class="text-2xl text-cyan-400 mb-2">🏦 Banco en C</h3>
-          <p class="text-gray-300">Gestión de clientes, retiros, depósitos y archivos, todo con lógica sólida en C puro.</p>
-        </div>
-      </div>
+      <!-- Proyecto 2 -->
+      <div class="glass-card p-6 rounded-xl">
+        <h3 class="text-2xl text-cyan-400 mb-2">🏦 Banco en C</h3>
+        <p class="text-gray-300">Gestión de clientes, retiros, depósitos y archivos, todo con lógica sólida en C puro.</p>
+      </div>
 
-      <!-- Proyecto 3 -->
-      <div class="glass-card p-6 rounded-xl md:flex md:flex-row items-center gap-6">
-        <div class="flex-1">
-          <h3 class="text-2xl text-yellow-400 mb-2">🎮 Super Smash Bros Warped (Java)</h3>
-          <p class="text-gray-300">Videojuego estilo arcade con mecánicas multijugador inspirado en Smash Bros. Programado en Java.</p>
-        </div>
-      </div>
+      <!-- Proyecto 3 -->
+      <div class="glass-card p-6 rounded-xl">
+        <h3 class="text-2xl text-yellow-400 mb-2">🎮 Super Smash Bros Warped (Java)</h3>
+        <p class="text-gray-300">Videojuego estilo arcade con mecánicas multijugador inspirado en Smash Bros. Programado en Java.</p>
+      </div>
 
-      <!-- Proyecto 4 -->
-      <div class="glass-card p-6 rounded-xl md:flex md:flex-row-reverse items-center gap-6">
-        <div class="flex-1">
-          <h3 class="text-2xl text-green-400 mb-2">🎵 Mantra – Plataforma musical</h3>
-          <p class="text-gray-300">Página web tipo Spotify que permite explorar música, crear playlists y disfrutar de una interfaz inmersiva.</p>
-        </div>
-      </div>
+      <!-- Proyecto 4 -->
+      <div class="glass-card p-6 rounded-xl">
+        <h3 class="text-2xl text-green-400 mb-2">🎵 Mantra – Plataforma musical</h3>
+        <p class="text-gray-300">Página web tipo Spotify que permite explorar música, crear playlists y disfrutar de una interfaz inmersiva.</p>
+      </div>
 
-      <!-- Proyecto 5 -->
-      <div class="glass-card p-6 rounded-xl md:flex md:flex-row items-center gap-6">
-        <div class="flex-1">
-          <h3 class="text-2xl text-fuchsia-400 mb-2">🎭 Comparsas Neón</h3>
-          <p class="text-gray-300">Sitio dedicado a la cultura festiva de comparsas: fotos, videos y programación de eventos con estilo futurista.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <!-- Proyecto 5 -->
+      <div class="glass-card p-6 rounded-xl">
+        <h3 class="text-2xl text-fuchsia-400 mb-2">🎭 Comparsas Neón</h3>
+        <p class="text-gray-300">Sitio dedicado a la cultura festiva de comparsas: fotos, videos y programación de eventos con estilo futurista.</p>
+      </div>
+    </div>
+  </section>
 
-  <section class="py-20 text-center">
-    <h2 class="text-4xl neon-text mb-6">Contacto</h2>
-    <p class="text-gray-300 mb-8">¿Tienes una colaboración épica? ¡Hablemos!</p>
-    <a href="mailto:javiergalindocampos1@gmail.com" class="neon-button">Enviar correo</a>
-  </section>
+  <section class="py-20 text-center">
+    <h2 class="text-4xl neon-text mb-6">Contacto</h2>
+    <p class="text-gray-300 mb-8">¿Tienes una colaboración épica? ¡Hablemos!</p>
+    <a href="mailto:javiergalindocampos1@gmail.com" class="neon-button">Enviar correo</a>
+  </section>
 
-  <footer class="text-center text-gray-500 py-6 text-sm">
-    © 2025 Javier Galindo. Hecho con ⚡ y código.
-  </footer>
+  <footer class="text-center text-gray-500 py-6 text-sm">
+    © 2025 Javier Galindo. Hecho con ⚡ y código.
+  </footer>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
-  <script>
-    // tsParticles configuración
-    tsParticles.load("tsparticles", {
-      background: { color: "#000" },
-      fpsLimit: 60,
-      particles: {
-        color: { value: "#00f7ff" },
-        links: {
-          enable: true,
-          color: "#00f7ff",
-          distance: 150,
-          opacity: 0.4,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 1
-        },
-        number: {
-          value: 80,
-          density: {
-            enable: true,
-            area: 800
-          }
-        },
-        opacity: { value: 0.3 },
-        shape: { type: "circle" },
-        size: { value: { min: 1, max: 3 } }
-      }
-    });
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+  <script>
+    // tsParticles configuración
+    tsParticles.load("tsparticles", {
+      background: { color: "#000" },
+      fpsLimit: 60,
+      particles: {
+        color: { value: "#00f7ff" },
+        links: {
+          enable: true,
+          color: "#00f7ff",
+          distance: 150,
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 1
+        },
+        number: {
+          value: 80,
+          density: {
+            enable: true,
+            area: 800
+          }
+        },
+        opacity: { value: 0.3 },
+        shape: { type: "circle" },
+        size: { value: { min: 1, max: 3 } }
+      }
+    });
 
-    // Typed.js configuración
-    new Typed("#typed", {
-      strings: ["Hola, soy Javier.", "Desarrollador Full Stack."],
-      typeSpeed: 50,
-      backSpeed: 30,
-      loop: true
-    });
+    // Typed.js configuración
+    new Typed("#typed", {
+      strings: ["Hola, soy Javier.", "Desarrollador Full Stack."],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true
+    });
 
-    // Cursor personalizado
-    document.addEventListener("mousemove", (e) => {
-      const cursor = document.getElementById("cursor");
-      cursor.style.top = e.clientY + "px";
-      cursor.style.left = e.clientX + "px";
-    });
+    // Cursor personalizado
+    document.addEventListener("mousemove", (e) => {
+      const cursor = document.getElementById("cursor");
+      cursor.style.top = e.clientY + "px";
+      cursor.style.left = e.clientX + "px";
+    });
 
-    // Three.js configuración
-    const container = document.getElementById('threejs-canvas');
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-    camera.position.z = 5;
+    // Three.js configuración
+    const container = document.getElementById('threejs-canvas');
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+    camera.position.z = 5;
 
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    container.appendChild(renderer.domElement);
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    container.appendChild(renderer.domElement);
 
-    const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material1 = new THREE.MeshStandardMaterial({ color: 0xff0066, emissive: 0xff0066, emissiveIntensity: 0.6 });
-    const material2 = new THREE.MeshStandardMaterial({ color: 0x00f7ff, emissive: 0x00f7ff, emissiveIntensity: 0.6 });
+    const geometry = new THREE.BoxGeometry(1, 1, 1);
+    const material1 = new THREE.MeshStandardMaterial({ color: 0xff0066, emissive: 0xff0066, emissiveIntensity: 0.6 });
+    const material2 = new THREE.MeshStandardMaterial({ color: 0x00f7ff, emissive: 0x00f7ff, emissiveIntensity: 0.6 });
 
-    const cube1 = new THREE.Mesh(geometry, material1);
-    cube1.position.x = -1.5;
-    scene.add(cube1);
+    const cube1 = new THREE.Mesh(geometry, material1);
+    cube1.position.x = -1.5;
+    scene.add(cube1);
 
-    const cube2 = new THREE.Mesh(geometry, material2);
-    cube2.position.x = 1.5;
-    scene.add(cube2);
+    const cube2 = new THREE.Mesh(geometry, material2);
+    cube2.position.x = 1.5;
+    scene.add(cube2);
 
-    const ambientLight = new THREE.AmbientLight(0x404040, 1.5);
-    scene.add(ambientLight);
+    const ambientLight = new THREE.AmbientLight(0x404040, 1.5);
+    scene.add(ambientLight);
 
-    const pointLight = new THREE.PointLight(0x00f7ff, 1, 100);
-    pointLight.position.set(0, 0, 10);
-    scene.add(pointLight);
+    const pointLight = new THREE.PointLight(0x00f7ff, 1, 100);
+    pointLight.position.set(0, 0, 10);
+    scene.add(pointLight);
 
-    function animate() {
-      requestAnimationFrame(animate);
-      cube1.rotation.x += 0.01;
-      cube1.rotation.y += 0.01;
-      cube2.rotation.x -= 0.01;
-      cube2.rotation.y -= 0.01;
-      renderer.render(scene, camera);
-    }
-    animate();
+    function animate() {
+      requestAnimationFrame(animate);
+      cube1.rotation.x += 0.01;
+      cube1.rotation.y += 0.01;
+      cube2.rotation.x -= 0.01;
+      cube2.rotation.y -= 0.01;
+      renderer.render(scene, camera);
+    }
+    animate();
 
-    window.addEventListener('resize', () => {
-      camera.aspect = container.clientWidth / container.clientHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(container.clientWidth, container.clientHeight);
-    });
-  </script>
+    window.addEventListener('resize', () => {
+      camera.aspect = container.clientWidth / container.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(container.clientWidth, container.clientHeight);
+    });
+  </script>
 </body>
 </html>
