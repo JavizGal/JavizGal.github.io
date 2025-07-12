@@ -14,6 +14,7 @@
       background-color: #000;
       overflow-x: hidden;
       cursor: none;
+      color: white;
     }
 
     .neon-text {
@@ -48,6 +49,8 @@
       backdrop-filter: blur(10px);
       box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
       transition: 0.3s ease-in-out;
+      padding: 1.5rem;
+      border-radius: 1rem;
     }
 
     .glass-card:hover {
@@ -75,15 +78,18 @@
     }
 
     #threejs-canvas {
-      position: absolute;
-      inset: 0;
+      position: fixed; /* fixed para no mover el flujo del documento */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       z-index: -10;
-      opacity: 0.25;
+      opacity: 0.1; /* más tenue para no interferir */
       pointer-events: none;
     }
   </style>
 </head>
-<body class="text-white scroll-smooth">
+<body class="scroll-smooth">
   <div class="cursor" id="cursor"></div>
   <div id="tsparticles"></div>
 
@@ -98,49 +104,42 @@
   <section class="py-20 px-6 md:px-20 max-w-5xl mx-auto">
     <h2 class="text-4xl neon-text mb-4">Sobre mí</h2>
     <p class="text-gray-300 leading-loose text-lg">
-      Soy desarrollador web full stack, combinando backend sólido y bases de datos eficientes. Me especializo en tecnologías como PHP, Laravel y bases de datos, pero también he trabajado con Java, C y ESP32 para crear soluciones que integran software, hardware e interacción humana.
+      Soy desarrollador web full stack, combinando backend sólido y bases de datos eficientes. Me especializo en PHP, Laravel y bases de datos, y también he trabajado con Java, C y ESP32 para soluciones integrales.
     </p>
   </section>
 
-  <section id="proyectos" class="py-20 px-6 md:px-20 max-w-6xl mx-auto relative">
-    <h2 class="text-4xl text-center neon-text mb-10 relative z-10">Proyectos Épicos</h2>
+  <section id="proyectos" class="py-20 px-6 md:px-20 max-w-6xl mx-auto relative z-20">
+    <h2 class="text-4xl text-center neon-text mb-10">Proyectos Épicos</h2>
 
-    <div id="threejs-canvas"></div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 relative z-10">
-      <!-- Proyecto 1 -->
-      <div class="glass-card p-6 rounded-xl">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div class="glass-card">
         <h3 class="text-2xl text-pink-500 mb-2">🧠 Predicción de emociones (BPM)</h3>
         <p class="text-gray-300">App que interpreta emociones humanas a partir de la frecuencia cardíaca en tiempo real.</p>
       </div>
 
-      <!-- Proyecto 2 -->
-      <div class="glass-card p-6 rounded-xl">
+      <div class="glass-card">
         <h3 class="text-2xl text-cyan-400 mb-2">🏦 Banco en C</h3>
-        <p class="text-gray-300">Gestión de clientes, retiros, depósitos y archivos, todo con lógica sólida en C puro.</p>
+        <p class="text-gray-300">Gestión de clientes, retiros, depósitos y archivos, con lógica sólida en C puro.</p>
       </div>
 
-      <!-- Proyecto 3 -->
-      <div class="glass-card p-6 rounded-xl">
+      <div class="glass-card">
         <h3 class="text-2xl text-yellow-400 mb-2">🎮 Super Smash Bros Warped (Java)</h3>
-        <p class="text-gray-300">Videojuego estilo arcade con mecánicas multijugador inspirado en Smash Bros. Programado en Java.</p>
+        <p class="text-gray-300">Videojuego estilo arcade multijugador, programado en Java.</p>
       </div>
 
-      <!-- Proyecto 4 -->
-      <div class="glass-card p-6 rounded-xl">
+      <div class="glass-card">
         <h3 class="text-2xl text-green-400 mb-2">🎵 Mantra – Plataforma musical</h3>
-        <p class="text-gray-300">Página web tipo Spotify que permite explorar música, crear playlists y disfrutar de una interfaz inmersiva.</p>
+        <p class="text-gray-300">Web tipo Spotify para explorar música y crear playlists.</p>
       </div>
 
-      <!-- Proyecto 5 -->
-      <div class="glass-card p-6 rounded-xl">
+      <div class="glass-card md:col-span-2">
         <h3 class="text-2xl text-fuchsia-400 mb-2">🎭 Comparsas Neón</h3>
-        <p class="text-gray-300">Sitio dedicado a la cultura festiva de comparsas: fotos, videos y programación de eventos con estilo futurista.</p>
+        <p class="text-gray-300">Sitio dedicado a cultura festiva con fotos, videos y eventos.</p>
       </div>
     </div>
   </section>
 
-  <section class="py-20 text-center">
+  <section class="py-20 text-center max-w-3xl mx-auto">
     <h2 class="text-4xl neon-text mb-6">Contacto</h2>
     <p class="text-gray-300 mb-8">¿Tienes una colaboración épica? ¡Hablemos!</p>
     <a href="mailto:javiergalindocampos1@gmail.com" class="neon-button">Enviar correo</a>
@@ -201,11 +200,11 @@
     // Three.js configuración
     const container = document.getElementById('threejs-canvas');
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.z = 5;
 
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setSize(window.innerWidth, window.innerHeight);
     container.appendChild(renderer.domElement);
 
     const geometry = new THREE.BoxGeometry(1, 1, 1);
@@ -238,9 +237,9 @@
     animate();
 
     window.addEventListener('resize', () => {
-      camera.aspect = container.clientWidth / container.clientHeight;
+      camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
-      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setSize(window.innerWidth, window.innerHeight);
     });
   </script>
 </body>
