@@ -74,7 +74,6 @@
       transform: translate(-50%, -50%);
     }
 
-    /* Contenedor del canvas de three.js */
     #threejs-canvas {
       position: absolute;
       inset: 0;
@@ -107,51 +106,49 @@
   <section id="proyectos" class="py-20 px-6 md:px-20 max-w-6xl mx-auto relative">
     <h2 class="text-4xl text-center neon-text mb-10 relative z-10">Proyectos Épicos</h2>
 
-    <!-- Canvas three.js para fondo 3D -->
     <div id="threejs-canvas"></div>
-  <div class="flex flex-col gap-12 relative z-10">
-  <!-- Proyecto 1 -->
-  <div class="glass-card p-6 rounded-xl md:flex md:flex-row items-center gap-6">
-    <div class="flex-1">
-      <h3 class="text-2xl text-pink-500 mb-2">🧠 Predicción de emociones (BPM)</h3>
-      <p class="text-gray-300">App que interpreta emociones humanas a partir de la frecuencia cardíaca en tiempo real.</p>
-    </div>
-  </div>
 
-  <!-- Proyecto 2 -->
-  <div class="glass-card p-6 rounded-xl md:flex md:flex-row-reverse items-center gap-6">
-    <div class="flex-1">
-      <h3 class="text-2xl text-cyan-400 mb-2">🏦 Banco en C</h3>
-      <p class="text-gray-300">Gestión de clientes, retiros, depósitos y archivos, todo con lógica sólida en C puro.</p>
-    </div>
-  </div>
+    <div class="flex flex-col gap-16 relative z-10">
+      <!-- Proyecto 1 -->
+      <div class="glass-card p-6 rounded-xl md:flex md:flex-row items-center gap-6">
+        <div class="flex-1">
+          <h3 class="text-2xl text-pink-500 mb-2">🧠 Predicción de emociones (BPM)</h3>
+          <p class="text-gray-300">App que interpreta emociones humanas a partir de la frecuencia cardíaca en tiempo real.</p>
+        </div>
+      </div>
 
-  <!-- Proyecto 3 -->
-  <div class="glass-card p-6 rounded-xl md:flex md:flex-row items-center gap-6">
-    <div class="flex-1">
-      <h3 class="text-2xl text-yellow-400 mb-2">🎮 Super Smash Bros Warped (Java)</h3>
-      <p class="text-gray-300">Videojuego estilo arcade con mecánicas multijugador inspirado en Smash Bros. Programado en Java.</p>
-    </div>
-  </div>
+      <!-- Proyecto 2 -->
+      <div class="glass-card p-6 rounded-xl md:flex md:flex-row-reverse items-center gap-6">
+        <div class="flex-1">
+          <h3 class="text-2xl text-cyan-400 mb-2">🏦 Banco en C</h3>
+          <p class="text-gray-300">Gestión de clientes, retiros, depósitos y archivos, todo con lógica sólida en C puro.</p>
+        </div>
+      </div>
 
-  <!-- Proyecto 4 -->
-  <div class="glass-card p-6 rounded-xl md:flex md:flex-row-reverse items-center gap-6">
-    <div class="flex-1">
-      <h3 class="text-2xl text-green-400 mb-2">🎵 Mantra – Plataforma musical</h3>
-      <p class="text-gray-300">Página web tipo Spotify que permite explorar música, crear playlists y disfrutar de una interfaz inmersiva.</p>
-    </div>
-  </div>
+      <!-- Proyecto 3 -->
+      <div class="glass-card p-6 rounded-xl md:flex md:flex-row items-center gap-6">
+        <div class="flex-1">
+          <h3 class="text-2xl text-yellow-400 mb-2">🎮 Super Smash Bros Warped (Java)</h3>
+          <p class="text-gray-300">Videojuego estilo arcade con mecánicas multijugador inspirado en Smash Bros. Programado en Java.</p>
+        </div>
+      </div>
 
-  <!-- Proyecto 5 -->
-  <div class="glass-card p-6 rounded-xl md:flex md:flex-row items-center gap-6">
-    <div class="flex-1">
-      <h3 class="text-2xl text-fuchsia-400 mb-2">🎭 Comparsas Neón</h3>
-      <p class="text-gray-300">Sitio dedicado a la cultura festiva de comparsas: fotos, videos y programación de eventos con estilo futurista.</p>
-    </div>
-  </div>
-</div>
-  </div>
-    
+      <!-- Proyecto 4 -->
+      <div class="glass-card p-6 rounded-xl md:flex md:flex-row-reverse items-center gap-6">
+        <div class="flex-1">
+          <h3 class="text-2xl text-green-400 mb-2">🎵 Mantra – Plataforma musical</h3>
+          <p class="text-gray-300">Página web tipo Spotify que permite explorar música, crear playlists y disfrutar de una interfaz inmersiva.</p>
+        </div>
+      </div>
+
+      <!-- Proyecto 5 -->
+      <div class="glass-card p-6 rounded-xl md:flex md:flex-row items-center gap-6">
+        <div class="flex-1">
+          <h3 class="text-2xl text-fuchsia-400 mb-2">🎭 Comparsas Neón</h3>
+          <p class="text-gray-300">Sitio dedicado a la cultura festiva de comparsas: fotos, videos y programación de eventos con estilo futurista.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="py-20 text-center">
@@ -164,8 +161,8 @@
     © 2025 Javier Galindo. Hecho con ⚡ y código.
   </footer>
 
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
-
   <script>
     // tsParticles configuración
     tsParticles.load("tsparticles", {
@@ -212,10 +209,9 @@
       cursor.style.left = e.clientX + "px";
     });
 
-    // Three.js configuración para sección proyectos
+    // Three.js configuración
     const container = document.getElementById('threejs-canvas');
     const scene = new THREE.Scene();
-
     const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
     camera.position.z = 5;
 
@@ -223,9 +219,7 @@
     renderer.setSize(container.clientWidth, container.clientHeight);
     container.appendChild(renderer.domElement);
 
-    // Geometría y materiales neón
     const geometry = new THREE.BoxGeometry(1, 1, 1);
-
     const material1 = new THREE.MeshStandardMaterial({ color: 0xff0066, emissive: 0xff0066, emissiveIntensity: 0.6 });
     const material2 = new THREE.MeshStandardMaterial({ color: 0x00f7ff, emissive: 0x00f7ff, emissiveIntensity: 0.6 });
 
@@ -237,7 +231,6 @@
     cube2.position.x = 1.5;
     scene.add(cube2);
 
-    // Iluminación
     const ambientLight = new THREE.AmbientLight(0x404040, 1.5);
     scene.add(ambientLight);
 
@@ -245,21 +238,16 @@
     pointLight.position.set(0, 0, 10);
     scene.add(pointLight);
 
-    // Animación de cubos
     function animate() {
       requestAnimationFrame(animate);
-
       cube1.rotation.x += 0.01;
       cube1.rotation.y += 0.01;
-
       cube2.rotation.x -= 0.01;
       cube2.rotation.y -= 0.01;
-
       renderer.render(scene, camera);
     }
     animate();
 
-    // Ajuste responsive
     window.addEventListener('resize', () => {
       camera.aspect = container.clientWidth / container.clientHeight;
       camera.updateProjectionMatrix();
