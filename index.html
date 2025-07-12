@@ -3,12 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <title>Javier Galindo – Portafolio</title>
+  
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+
+  <!-- tsParticles -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <style>
     body {
       font-family: 'Orbitron', sans-serif;
       background-color: #000;
@@ -37,12 +45,17 @@
       transition: all 0.3s ease-in-out;
       text-decoration: none;
       display: inline-block;
+      font-weight: 700;
+      font-family: 'Orbitron', sans-serif;
+      user-select: none;
     }
 
-    .neon-button:hover {
+    .neon-button:hover,
+    .neon-button:focus {
       background: #ff0044;
       color: black;
       box-shadow: 0 0 20px #ff0044, 0 0 40px #ff0044;
+      outline: none;
     }
 
     .glass-card {
@@ -53,11 +66,13 @@
       transition: 0.3s ease-in-out;
       padding: 1.5rem;
       border-radius: 1rem;
+      color: #d1d5db; /* Tailwind gray-300 */
     }
 
     .glass-card:hover {
       box-shadow: 0 0 30px rgba(255, 0, 100, 0.8);
       transform: scale(1.03);
+      color: white;
     }
 
     #tsparticles {
@@ -80,72 +95,79 @@
       mix-blend-mode: difference;
       transform: translate(-50%, -50%);
     }
+
+    /* Responsive text adjustments */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem !important;
+      }
+    }
   </style>
 </head>
-<body class="scroll-smooth">
+<body>
 
   <div id="tsparticles"></div>
   <div class="cursor" id="cursor"></div>
 
-  <section class="h-screen flex flex-col justify-center items-center text-center px-4 z-10 relative">
-    <h1 class="text-5xl md:text-7xl neon-text mb-4">
+  <section class="h-screen flex flex-col justify-center items-center text-center px-6 md:px-4 z-10 relative">
+    <h1 class="text-5xl md:text-7xl neon-text mb-4 font-extrabold leading-tight" style="font-family: 'Orbitron', sans-serif;">
       <span id="typed"></span>
     </h1>
-    <p class="text-xl md:text-2xl text-gray-300 mb-8">Trabajo dónde la tecnología respira, decide y se mueve.</p>
-    <a href="#proyectos" class="neon-button">Ver Proyectos</a>
+    <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-xl">
+      Trabajo dónde la tecnología respira, decide y se mueve.
+    </p>
+    <a href="#proyectos" class="neon-button" role="button" tabindex="0">Ver Proyectos</a>
   </section>
 
   <section class="py-20 px-6 md:px-20 max-w-5xl mx-auto z-10 relative">
-    <h2 class="text-4xl neon-text mb-4">Sobre mí</h2>
-    <p class="text-gray-300 leading-loose text-lg">
-      Soy desarrollador web full stack con experiencia en backend sólido y bases de datos eficientes. Me especializo en PHP, Laravel y MySQL, y también manejo HTML, CSS y JavaScript para crear interfaces atractivas y funcionales.
-      <br><br>
+    <h2 class="text-4xl neon-text mb-6 font-semibold">Sobre mí</h2>
+    <p class="text-gray-300 leading-relaxed text-lg max-w-3xl mx-auto">
+      Soy desarrollador web full stack con experiencia en backend sólido y bases de datos eficientes. Me especializo en PHP, Laravel y MySQL, y también manejo HTML, CSS y JavaScript para crear interfaces atractivas y funcionales.<br><br>
       Además, he trabajado con Java, C y ESP32, lo que me permite diseñar soluciones integrales y versátiles. Me enfoco en desarrollar proyectos con calidad, que respondan a las necesidades reales y ofrezcan un buen rendimiento.
     </p>
   </section>
 
   <section id="proyectos" class="py-20 px-6 md:px-20 max-w-6xl mx-auto relative z-10">
-    <h2 class="text-4xl text-center neon-text mb-10">Proyectos Épicos</h2>
+    <h2 class="text-4xl text-center neon-text mb-10 font-semibold">Proyectos Épicos</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
       <div class="glass-card">
-        <h3 class="text-2xl text-pink-500 mb-2">🧠 Predicción de emociones (BPM)</h3>
-        <p class="text-gray-300">App que interpreta emociones humanas a partir de la frecuencia cardíaca en tiempo real.</p>
+        <h3 class="text-2xl text-pink-500 mb-2 font-semibold">🧠 Predicción de emociones (BPM)</h3>
+        <p>App que interpreta emociones humanas a partir de la frecuencia cardíaca en tiempo real.</p>
       </div>
 
       <div class="glass-card">
-        <h3 class="text-2xl text-cyan-400 mb-2">🏦 Banco en C</h3>
-        <p class="text-gray-300">Gestión de clientes, retiros, depósitos y archivos, con lógica sólida en C puro.</p>
+        <h3 class="text-2xl text-cyan-400 mb-2 font-semibold">🏦 Banco SINGAPUR en C</h3>
+        <p>Gestión de clientes, retiros, depósitos y archivos, con lógica sólida en C puro.</p>
       </div>
 
       <div class="glass-card">
-        <h3 class="text-2xl text-yellow-400 mb-2">🎮 Super Smash Bros Warped (Java)</h3>
-        <p class="text-gray-300">Videojuego estilo arcade multijugador, programado en Java.</p>
+        <h3 class="text-2xl text-yellow-400 mb-2 font-semibold">🎮 Super Smash Bros Warped (Java)</h3>
+        <p>Videojuego estilo arcade multijugador, programado en Java.</p>
       </div>
 
       <div class="glass-card">
-        <h3 class="text-2xl text-green-400 mb-2">🎵 Mantra – Plataforma musical</h3>
-        <p class="text-gray-300">Web tipo Spotify para explorar música y crear playlists.</p>
+        <h3 class="text-2xl text-green-400 mb-2 font-semibold">🎵 Mantra – Plataforma musical</h3>
+        <p>Web tipo Spotify para explorar música y crear playlists.</p>
       </div>
 
       <div class="glass-card md:col-span-2">
-        <h3 class="text-2xl text-fuchsia-400 mb-2">🎭 Comparsas Neón</h3>
-        <p class="text-gray-300">Sitio dedicado a cultura festiva con fotos, videos y eventos.</p>
+        <h3 class="text-2xl text-fuchsia-400 mb-2 font-semibold">🎭 Carnaval de Chimalhuacán Ujajay</h3>
+        <p>Sitio dedicado a cultura festiva con fotos, videos y eventos.</p>
       </div>
     </div>
   </section>
 
   <section class="py-20 text-center max-w-3xl mx-auto z-10 relative">
-    <h2 class="text-4xl neon-text mb-6">Contacto</h2>
+    <h2 class="text-4xl neon-text mb-6 font-semibold">Contacto</h2>
     <p class="text-gray-300 mb-8">¿Listo para conectar? Estoy disponible para ti.</p>
-    <a href="mailto:javiergalindocampos1@gmail.com" class="neon-button">Enviar correo</a>
+    <a href="mailto:javiergalindocampos1@gmail.com" class="neon-button" role="button" tabindex="0">Enviar correo</a>
   </section>
 
   <footer class="text-center text-gray-500 py-6 text-sm z-10 relative">
     © 2025 Javier Galindo. Hecho con ⚡ y código.
   </footer>
 
-  <!-- Scripts -->
   <script>
     // tsParticles configuración
     tsParticles.load("tsparticles", {
@@ -190,6 +212,16 @@
       const cursor = document.getElementById("cursor");
       cursor.style.top = e.clientY + "px";
       cursor.style.left = e.clientX + "px";
+    });
+
+    // Scroll rápido para "Ver Proyectos"
+    document.querySelector('a[href="#proyectos"]').addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector('#proyectos');
+      window.scrollTo({
+        top: target.offsetTop,
+        behavior: 'auto' // Cambia a 'smooth' si quieres suave
+      });
     });
   </script>
 </body>
