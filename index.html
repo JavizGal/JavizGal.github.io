@@ -66,7 +66,9 @@
       transition: 0.3s ease-in-out;
       padding: 1.5rem;
       border-radius: 1rem;
-      color: #d1d5db; /* Tailwind gray-300 */
+      color: #d1d5db;
+      text-decoration: none;
+      display: block;
     }
 
     .glass-card:hover {
@@ -96,7 +98,6 @@
       transform: translate(-50%, -50%);
     }
 
-    /* Responsive text adjustments */
     @media (max-width: 768px) {
       h1 {
         font-size: 2.5rem !important;
@@ -110,7 +111,7 @@
   <div class="cursor" id="cursor"></div>
 
   <section class="h-screen flex flex-col justify-center items-center text-center px-6 md:px-4 z-10 relative">
-    <h1 class="text-5xl md:text-7xl neon-text mb-4 font-extrabold leading-tight" style="font-family: 'Orbitron', sans-serif;">
+    <h1 class="text-5xl md:text-7xl neon-text mb-4 font-extrabold leading-tight">
       <span id="typed"></span>
     </h1>
     <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-xl">
@@ -131,30 +132,30 @@
     <h2 class="text-4xl text-center neon-text mb-10 font-semibold">Proyectos Épicos</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-      <div class="glass-card">
+      <a href="./Predicción de emociones/index.html" class="glass-card">
         <h3 class="text-2xl text-pink-500 mb-2 font-semibold">🧠 Predicción de emociones (BPM)</h3>
         <p>App que interpreta emociones humanas a partir de la frecuencia cardíaca en tiempo real.</p>
-      </div>
+      </a>
 
-      <div class="glass-card">
+      <a href="./Banco SINGAPUR/index.html" class="glass-card">
         <h3 class="text-2xl text-cyan-400 mb-2 font-semibold">🏦 Banco SINGAPUR en C</h3>
         <p>Gestión de clientes, retiros, depósitos y archivos, con lógica sólida en C puro.</p>
-      </div>
+      </a>
 
-      <div class="glass-card">
+      <a href="./Super Smash Bros Warped/index.html" class="glass-card">
         <h3 class="text-2xl text-yellow-400 mb-2 font-semibold">🎮 Super Smash Bros Warped (Java)</h3>
         <p>Videojuego estilo arcade multijugador, programado en Java.</p>
-      </div>
+      </a>
 
-      <div class="glass-card">
+      <a href="./Mantra/index.html" class="glass-card">
         <h3 class="text-2xl text-green-400 mb-2 font-semibold">🎵 Mantra – Plataforma musical</h3>
         <p>Web tipo Spotify para explorar música y crear playlists.</p>
-      </div>
+      </a>
 
-      <div class="glass-card md:col-span-2">
+      <a href="./Carnaval de Chimalhuacán Ujajay/index.html" class="glass-card md:col-span-2">
         <h3 class="text-2xl text-fuchsia-400 mb-2 font-semibold">🎭 Carnaval de Chimalhuacán Ujajay</h3>
         <p>Sitio dedicado a cultura festiva con fotos, videos y eventos.</p>
-      </div>
+      </a>
     </div>
   </section>
 
@@ -169,7 +170,6 @@
   </footer>
 
   <script>
-    // tsParticles configuración
     tsParticles.load("tsparticles", {
       background: { color: "#000" },
       fpsLimit: 60,
@@ -199,7 +199,6 @@
       }
     });
 
-    // Typed.js configuración
     new Typed("#typed", {
       strings: ["Hola, soy Javier.", "Desarrollador Full Stack."],
       typeSpeed: 50,
@@ -207,20 +206,18 @@
       loop: true
     });
 
-    // Cursor personalizado
     document.addEventListener("mousemove", (e) => {
       const cursor = document.getElementById("cursor");
       cursor.style.top = e.clientY + "px";
       cursor.style.left = e.clientX + "px";
     });
 
-    // Scroll rápido para "Ver Proyectos"
     document.querySelector('a[href="#proyectos"]').addEventListener('click', function(e) {
       e.preventDefault();
       const target = document.querySelector('#proyectos');
       window.scrollTo({
         top: target.offsetTop,
-        behavior: 'auto' // Cambia a 'smooth' si quieres suave
+        behavior: 'auto'
       });
     });
   </script>
