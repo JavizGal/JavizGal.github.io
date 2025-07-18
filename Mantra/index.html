@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/Css/Estilos.css">
+    <link rel="icon" href="/img/Logo.png"/>
+    
+    <title>Mantra</title>
+</head>
+
+<body>
+    <header>
+        <div class="Barra_Lateral">
+            <h1><img class="Hola" src="img/Logo.png" width="35px" height="35px" alt="Hola"> Mantra</h1>
+                <div class="playlist">
+                    <h4 class="active"><span></span><i class="bi bi-music-note-beamed"></i>Mas Populares</h4>
+                </div>
+                <div class="menu_song">
+                    <li class="songItem">
+                        <span>01</span>
+                        <img src="img/17.jpg" alt="Gorillaz">
+                        <h5>
+                            On Melancholy Hill
+                            <div class="subtitle">Gorillaz</div>
+                        </h5>
+                        <i class="bi playListPlay bi-play-circle-fill" id="17"></i>
+                    </li>
+                    <li class="songItem">
+                        <span>02</span>
+                        <img src="img/18.jpg" alt="InterWorld">
+                        <h5>
+                            Metamorphosis
+                            <div class="subtitle">InterWorld</div>
+                        </h5>
+                        <i class="bi playListPlay bi-play-circle-fill" id="18"></i>
+                    </li>
+                    <li class="songItem">
+                        <span>03</span>
+                        <img src="img/23.jpg" alt="Rosa">
+                        <h5>
+                            Rosa Pastel
+                            <div class="subtitle">Belanova</div>
+                        </h5>
+                        <i class="bi playListPlay bi-play-circle-fill" id="23"></i>
+                    </li>
+                    <li class="songItem">
+                        <span>04</span>
+                        <img src="img/11.jpg" alt="Aint">
+                        <h5>
+                            Ain´t Shit
+                            <div class="subtitle">Doja Cat</div>
+                        </h5>
+                        <i class="bi playListPlay bi-play-circle-fill" id="11"></i>
+                    </li>
+                    <li class="songItem">
+                        <span>05</span>
+                        <img src="img/12.jpg" alt="Romantika">
+                        <h5>
+                            Romantika
+                            <div class="subtitle">Brutalismus 3000</div>
+                        </h5>
+                        <i class="bi playListPlay bi-play-circle-fill" id= "12"></i>
+                    </li>
+                    <li class="songItem">
+                        <span>06</span>
+                        <img src="img/14.jpg" alt="Loser">
+                        <h5>
+                            Loser
+                        <div class="subtitle">Falling in Reverse</div>
+                        </h5>
+                        <i class="bi playListPlay bi-play-circle-fill" id="14"></i>
+                    </li>
+                    <li class="songItem">
+                        <span>07</span>
+                        <img src="img/26.jpg" alt="Loser">
+                        <h5>
+                            Ride Or Die Pt.2
+                        <div class="subtitle">Sevdaliza</div>
+                        </h5>
+                        <i class="bi playListPlay bi-play-circle-fill" id="26"></i>
+                    </li>
+                    <li class="songItem">
+                        <span>08</span>
+                        <img src="img/6.jpg" alt="Satan">
+                        <h5>
+                            Satan Was Born
+                            <div class="subtitle">Brutalismus 3000</div>
+                        </h5>
+                        <i class="bi playListPlay bi-play-circle-fill" id="6"></i>
+                    </li>
+                    <li class="songItem">
+                        <span>09</span>
+                        <img src="img/20.jpg" alt="Romantika">
+                        <h5>
+                            Sex, Drougs, Etc.
+                            <div class="subtitle">Reverb Tazzy</div>
+                        </h5>
+                        <i class="bi playListPlay bi-play-circle-fill" id= "20"></i>
+                    </li>
+                    <li class="songItem">
+                        <span>10</span>
+                        <img src="img/13.jpg" alt="Loser">
+                        <h5>
+                            Shiner In The Dark
+                        <div class="subtitle">Royal Bloood</div>
+                        </h5>
+                        <i class="bi playListPlay bi-play-circle-fill" id="13"></i>
+                    </li>
+                </div>
+            </div>
+            <div class="song_side">
+                
+                <nav>
+                    <ul>
+                        <li>Inicio<span></span></li>
+                    </ul>
+                    <div class="search">
+                        <i class="bi bi-search"></i>
+                        <input type="text" placeholder="Search Music...">
+                    </div>
+            <div class="user">
+                <img src="img/Logo.png" alt="User" title="Spotify (Chirag Nagar)">
+            </div>
+        </nav>
+
+        <div class="content">
+        
+            <h1>Royal Blood<br>How Many More Times <br></h1>
+            <p>
+                Disfruta De La Nueva Rola De Royal Blood Ahora
+            </p>
+            <div class="buttons">
+                <button id="Plays">PLAY</button>
+                <button>FOLLOW</button>
+            </div>
+        </div>
+        
+        <div class="popular_song">
+            <div class="h4">
+                <h4>Canciones</h4>
+                <div class="btn_s">
+                    <i id="left_scroll" class="bi bi-arrow-left-short"></i>
+                    <i id="right_scroll" class="bi bi-arrow-right-short"></i>
+                </div>
+            </div>
+            <div class="pop_song">
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="img/1.jpg" alt="alan">
+                        <i class="bi playListPlay bi-play-circle-fill" id="1"></i>
+                    </div>
+                    <h5>Everthings Fine
+                        <br>
+                        <div class="subtitle">Royal Blood</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="img/2.jpg" alt="alan">
+                        <i class="bi playListPlay bi-play-circle-fill" id="2"></i>
+                    </div>
+                    <h5>Robot
+                        <br>
+                        <div class="subtitle">Dytto</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="img/3.jpg" alt="alan">
+                        <i class="bi playListPlay bi-play-circle-fill" id="3"></i>
+                    </div>
+                    <h5>9MM
+                        <br>
+                        <div class="subtitle">Brutalismus 3000</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="img/4.jpg" alt="alan">
+                        <i class="bi playListPlay bi-play-circle-fill" id="4"></i>
+                    </div>
+                    <h5>High Waters
+                        <br>
+                        <div class="subtitle">Royal Blood</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="img/5.jpg" alt="alan">
+                        <i class="bi playListPlay bi-play-circle-fill" id="5"></i>
+                    </div>
+                    <h5>Debilidad
+                        <br>
+                        <div class="subtitle">Rorro</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="img/6.jpg" alt="alan">
+                        <i class="bi playListPlay bi-play-circle-fill" id="6"></i>
+                    </div>
+                    <h5>Satan Was A Babybommer
+                        <br>
+                        <div class="subtitle">Brutalismus 3000</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="img/7.jpg" alt="alan">
+                        <i class="bi playListPlay bi-play-circle-fill" id="7"></i>
+                    </div>
+                    <h5>How Many More Times
+                        <br>
+                        <div class="subtitle">Royal Blood</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="img/8.jpg" alt="alan">
+                        <i class="bi playListPlay bi-play-circle-fill" id="8"></i>
+                    </div>
+                    <h5>Juguete Roto
+                        <br>
+                        <div class="subtitle">Rorro</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="img/9.jpg" alt="alan">
+                        <i class="bi playListPlay bi-play-circle-fill" id="9"></i>
+                    </div>
+                    <h5>Eupaträume
+                        <br>
+                        <div class="subtitle">Brutalismus 3000</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="img/10.jpg" alt="alan">
+                        <i class="bi playListPlay bi-play-circle-fill" id="10"></i>
+                    </div>
+                    <h5>Pull Me Through
+                        <br>
+                        <div class="subtitle">Royal Blood</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="img/11.jpg" alt="alan">
+                        <i class="bi playListPlay bi-play-circle-fill" id="11"></i>
+                    </div>
+                    <h5>Ain't Shit
+                        <br>
+                        <div class="subtitle">Doja Cat</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="img/12.jpg" alt="alan">
+                        <i class="bi playListPlay bi-play-circle-fill" id="12"></i>
+                    </div>
+                    <h5>Romantika
+                        <br>
+                        <div class="subtitle">Brutalismus 3000</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                        <div class="img_play">
+                            <img src="img/13.jpg" alt="alan">
+                            <i class="bi playListPlay bi-play-circle-fill" id="13"></i>
+                        </div>
+                        <h5>Shiner In The Dark
+                            <br>
+                            <div class="subtitle">Royal Blood</div>
+                        </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="img/14.jpg" alt="alan">
+                        <i class="bi playListPlay bi-play-circle-fill" id="14"></i>
+                    </div>
+                    <h5>Loser
+                        <br>
+                        <div class="subtitle">Falling In Reverse</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                        <div class="img_play">
+                            <img src="img/15.jpg" alt="alan">
+                            <i class="bi playListPlay bi-play-circle-fill" id="15"></i>
+                        </div>
+                        <h5>Protection Charm
+                            <br>
+                            <div class="subtitle">Miguel Angeles</div>
+                        </h5>
+                    </li>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="img/16.jpg" alt="alan">
+                        <i class="bi playListPlay bi-play-circle-fill" id="16"></i>
+                    </div>
+                    <h5>Supermodel Avalanches
+                        <br>
+                        <div class="subtitle">Royal Blood</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                        <div class="img_play">
+                            <img src="img/17.jpg" alt="alan">
+                            <i class="bi playListPlay bi-play-circle-fill" id="17"></i>
+                        </div>
+                        <h5>On Melancholy Hill
+                            <br>
+                            <div class="subtitle">Gorillaz</div>
+                        </h5>
+                    </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="img/18.jpg" alt="alan">
+                        <i class="bi playListPlay bi-play-circle-fill" id="18"></i>
+                    </div>
+                    <h5>Metamorphosis
+                        <br>
+                        <div class="subtitle">InterWorld</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                            <img src="img/19.jpg" alt="alan">
+                            <i class="bi playListPlay bi-play-circle-fill" id="19"></i>
+                        </div>
+                        <h5>Tell Me When It's Too Late
+                            <br>
+                            <div class="subtitle">Royal Blood</div>
+                        </h5>
+                    </li>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="img/20.jpg" alt="alan">
+                        <i class="bi playListPlay bi-play-circle-fill" id="20"></i>
+                    </div>
+                    <h5>Sex, Drougs Etc.
+                        <br>
+                        <div class="subtitle">Reverb Tazzy</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="img/21.jpg" alt="alan">
+                        <i class="bi playListPlay bi-play-circle-fill" id="21"></i>
+                    </div>
+                    <h5>The Firing Line
+                        <br>
+                        <div class="subtitle">Royal Blood</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="img/22.jpg" alt="alan">
+                        <i class="bi playListPlay bi-play-circle-fill" id="22"></i>
+                    </div>
+                    <h5>Baby Doll
+                        <br>
+                        <div class="subtitle">Ari</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="img/23.jpg" alt="alan">
+                        <i class="bi playListPlay bi-play-circle-fill" id="23"></i>
+                    </div>
+                    <h5>Rosa Pastel
+                        <br>
+                        <div class="subtitle">Belanova</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="img/24.jpg" alt="alan">
+                        <i class="bi playListPlay bi-play-circle-fill" id="24"></i>
+                    </div>
+                    <h5>There Goes My Cool
+                        <br>
+                        <div class="subtitle">Royal Blood</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="img/25.jpg" alt="alan">
+                        <i class="bi playListPlay bi-play-circle-fill" id="25"></i>
+                    </div>
+                    <h5>I Like The Way You Kiss Me
+                        <br>
+                        <div class="subtitle">Artemas</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="img/26.jpg" alt="alan">
+                        <i class="bi playListPlay bi-play-circle-fill" id="26"></i>
+                    </div>
+                    <h5>Ride Or Die Pt.2
+                        <br>
+                        <div class="subtitle">Sevdaliza</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="img/27.jpg" alt="alan">
+                        <i class="bi playListPlay bi-play-circle-fill" id="27"></i>
+                    </div>
+                    <h5>Triggers
+                        <br>
+                        <div class="subtitle">Royal Blood</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="img/28.jpg" alt="alan">
+                        <i class="bi playListPlay bi-play-circle-fill" id="28"></i>
+                    </div>
+                    <h5>Icewhore
+                        <br>
+                        <div class="subtitle">Lumi Athena</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="img/29.jpg" alt="alan">
+                        <i class="bi playListPlay bi-play-circle-fill" id="29"></i>
+                    </div>
+                    <h5>Waves
+                        <br>
+                        <div class="subtitle">Royal Blood</div>
+                    </h5>
+                    </li>
+                    <li class="songItem">
+                        <div class="img_play">
+                            <img src="img/30.jpg" alt="alan">
+                            <i class="bi playListPlay bi-play-circle-fill" id="30"></i>
+                        </div>
+                        <h5>The Lost Soul Down<br>
+                            <div class="subtitle">NBSPLV</div>
+                        </h5>
+                    </li>
+                </div>
+            </div>
+            <div class="popular_artists">
+                <div class="h4">
+                    <h4>Popular Artists</h4>
+                    
+                    <div class="btn_s">
+                        <i id="left_scrolls" class="bi bi-arrow-left-short"></i>
+                        <i id="right_scrolls" class="bi bi-arrow-right-short"></i>
+                    </div>
+                </div>
+                <div class="item">
+                    <li>
+                        <a href="Brutal.html"><img src="img/Brutality.jpg" id="Link1" alt="Brutalismus 3000" title="Brutalismus 3000"></a>
+                    </li>
+                    <li>
+                        <a href="Royal.html"><img src="img/Roya.jpg" id="Link2" alt="Royal Blood" title="Royal Blood"></a>
+                    </li>
+                    <li>
+                        <a href="Rorro.html"><img src="img/Rorro.jpg" id="Link3" alt="Rorro" title="Rorro"></a>
+                    </li>
+                    <li>
+                        <a href="Dytto.html"><img src="img/Dytto.jpg"id="Link4" alt="Dytto" title="Dytto"></a>
+                    </li>
+                    <li>
+                        <a href="Fall.html"><img src="img/Fall.jpg" id="Link5"alt="Falling In Reverse" title="Falling In Reverse"></a>
+                    </li>
+                    <li>
+                        <a href="Gor.html"><img src="img/Gor.jpg" id="Link6" alt="Gorillaz" title="Gorillaz"></a>
+                    </li>
+                    <li>
+                        <a href="Inter.html"><img src="img/Inter.jpg" id="Link7" alt="InterWorld" title="InterWorld"></a>
+                    </li>
+                </div>
+            </div>
+        </div>
+
+        <div class="master_play">
+            <div class="wave">
+                <div class="wave1"></div>
+                <div class="wave1"></div>
+                <div class="wave1"></div>
+            </div>
+            <a class="D" href="audio/2.mp3" download="Robot.mp3"><img src="img/2.jpg" alt="Alan" id="poster_master_play"></a>
+            
+            <h5 id="title">
+                Robot<br>
+
+                <div class="subtitle"><a class="S" href="Dytto.html">Dytto</a></div>
+            </h5>
+
+            <div class="icon">
+                <i class="bi bi-skip-start-fill" id="back"></i>
+                <i class="bi bi-play-fill" id="masterPlay"></i>
+                <i class="bi bi-skip-end-fill" id="next"></i>
+            </div>
+            
+            <span id="currentStart">0:00</span>
+                
+            <div class="bar">
+                <input type="range" id="seek" min="0" value="0" max="100">
+                
+                <div class="bar2" id="bar2"></div>
+                <div class="dot"></div>
+            </div>
+            
+            <span id="currentEnd">0:00</span>
+
+            <div class="vol">
+                <i class="bi bi-volume-down-fill" id="vol_icon"></i>
+                
+                <input type="range" id="vol" min="0" value="100" max="100">
+            
+                <div class="vol_bar"></div>
+                <div class="dot" id="vol_dot"></div>
+            </div>
+        </div>
+    </header>
+    
+    <script src="/JS/Inicio.js"></script>
+    <script src="/JS/Artista.js"></script>
+</body>
+</html>
