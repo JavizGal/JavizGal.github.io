@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Javier Galindo – Portafolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio Javier Galindo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
-
-  <!-- tsParticles -->
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-
   <!-- Typed.js -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
@@ -117,10 +110,13 @@
     <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-xl">
       Trabajo dónde la tecnología respira, decide y se mueve.
     </p>
-    <a href="#proyectos" class="neon-button" role="button" tabindex="0">Ver Proyectos</a>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="#sobre-mi" class="neon-button" role="button" tabindex="0">Sobre mí</a>
+      <a href="#proyectos" class="neon-button" role="button" tabindex="0">Ver Proyectos</a>
+    </div>
   </section>
 
-  <section class="py-20 px-6 md:px-20 max-w-5xl mx-auto z-10 relative">
+  <section id="sobre-mi" class="py-20 px-6 md:px-20 max-w-5xl mx-auto z-10 relative">
     <h2 class="text-4xl neon-text mb-6 font-semibold">Sobre mí</h2>
     <p class="text-gray-300 leading-relaxed text-lg max-w-3xl mx-auto">
         Soy desarrollador web full stack con sólida experiencia en backend y en la creación de bases de datos eficientes. Me especializo en PHP, Laravel y MySQL, además de dominar HTML, CSS y JavaScript para el desarrollo de interfaces modernas, atractivas y funcionales.
@@ -215,12 +211,14 @@
       cursor.style.left = e.clientX + "px";
     });
 
-    document.querySelector('a[href="#proyectos"]').addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector('#proyectos');
-      window.scrollTo({
-        top: target.offsetTop,
-        behavior: 'auto'
+    // Scroll suave para los botones
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
       });
     });
   </script>
