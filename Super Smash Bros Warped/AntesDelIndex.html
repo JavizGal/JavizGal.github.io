@@ -15,7 +15,7 @@
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
   <style>
-    :root{
+    :root {
       --accent: #ff7a00;  /* naranja principal */
       --accent-border: #ff6a00;
       --text: #ffffff;
@@ -120,10 +120,10 @@
       background: { color: "#000000" },
       fpsLimit: 60,
       particles: {
-        color: { value: "#ff7a00" },
+        color: { value: "#ff7a00" }, // Cambiado a naranja
         links: {
           enable: true,
-          color: "#ff7a00",
+          color: "#ff7a00", // Cambiado a naranja
           distance: 140,
           opacity: 0.35,
           width: 1
@@ -160,102 +160,3 @@
   </script>
 </body>
 </html>
-    .neon-text {
-      color: #9b59b6;
-      text-shadow:
-        0 0 5px #9b59b6,
-        0 0 10px #9b59b6,
-        0 0 20px #9b59b6,
-        0 0 40px #9b59b6;
-    }
-
-    .neon-button {
-      border: 2px solid #8e44ad;
-      padding: 0.75rem 2rem;
-      color: #8e44ad;
-      text-shadow: 0 0 10px #8e44ad;
-      box-shadow: 0 0 5px #8e44ad;
-      transition: all 0.3s ease-in-out;
-      text-decoration: none;
-      display: inline-block;
-      font-weight: 700;
-      font-family: 'Orbitron', sans-serif;
-      user-select: none;
-    }
-
-    .neon-button:hover,
-    .neon-button:focus {
-      background: #8e44ad;
-      color: black;
-      box-shadow: 0 0 20px #8e44ad, 0 0 40px #8e44ad;
-      outline: none;
-    }
-
-    .cursor {
-      position: fixed;
-      width: 20px;
-      height: 20px;
-      background: #9b59b6;
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 1000;
-      mix-blend-mode: difference;
-      transform: translate(-50%, -50%);
-    }
-  </style>
-</head>
-<body>
-
-  <div id="tsparticles"></div>
-  <div class="cursor" id="cursor"></div>
-
-  <section class="h-screen flex flex-col justify-center items-center text-center px-6">
-    <h1 class="text-4xl md:text-6xl neon-text mb-6 font-bold">
-      Antes de continuar...
-    </h1>
-    <p class="text-gray-300 text-lg md:text-xl max-w-2xl mb-8">
-      Este proyecto está optimizado para pantallas grandes.<br />
-      <span class="text-pink-400 font-bold">Te recomiendo activar el modo computadora</span>
-      si estás viendo esto desde un celular o tablet.
-    </p>
-    <a href="index.html" class="neon-button">Continuar de todos modos</a>
-  </section>
-
-  <script>
-    tsParticles.load("tsparticles", {
-      background: { color: "#000" },
-      fpsLimit: 60,
-      particles: {
-        color: { value: "#9b59b6" },
-        links: {
-          enable: true,
-          color: "#9b59b6",
-          distance: 150,
-          opacity: 0.4,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 1
-        },
-        number: {
-          value: 80,
-          density: {
-            enable: true,
-            area: 800
-          }
-        },
-        opacity: { value: 0.3 },
-        shape: { type: "circle" },
-        size: { value: { min: 1, max: 3 } }
-      }
-    });
-
-    document.addEventListener("mousemove", (e) => {
-      const cursor = document.getElementById("cursor");
-      cursor.style.top = e.clientY + "px";
-      cursor.style.left = e.clientX + "px";
-    });
-  </script>
-</body>
-</html> este codigo esa bien pero las partículas son moradas, puedes cambiarlas a naranjas?
