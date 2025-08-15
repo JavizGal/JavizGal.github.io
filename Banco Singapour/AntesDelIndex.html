@@ -20,8 +20,8 @@
 
   <style>
     :root {
-      --accent: #ff7a00;   /* naranja principal */
-      --accent-border: #ff6a00;
+      --accent: #ff0000;   /* rojo principal */
+      --accent-border: #cc0000;
       --text: #ffffff;
       --bg: #000000;
     }
@@ -83,15 +83,15 @@
     .swiper-slide img {
       max-height: 70vh;
       border-radius: 1rem;
-      border: 3px solid rgba(255, 122, 0, 0.5);
-      box-shadow: 0 0 20px rgba(255, 122, 0, 0.5);
+      border: 3px solid rgba(255, 0, 0, 0.5); /* Ajustado a rojo */
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* Ajustado a rojo */
       transition: all 0.4s ease-in-out;
       object-fit: cover;
     }
 
     .swiper-slide-active img {
       transform: scale(1.05);
-      box-shadow: 0 0 50px rgba(255, 122, 0, 0.8);
+      box-shadow: 0 0 50px rgba(255, 0, 0, 0.8); /* Ajustado a rojo */
       filter: brightness(1.1);
     }
 
@@ -141,15 +141,15 @@
   </div>
 
   <script>
-    // Partículas fondo naranja
+    // Partículas fondo rojo
     tsParticles.load("tsparticles", {
       background: { color: "#000000" },
       fpsLimit: 60,
       particles: {
-        color: { value: "#ff7a00" },
+        color: { value: "#ff0000" },
         links: {
           enable: true,
-          color: "#ff7a00",
+          color: "#ff0000",
           distance: 140,
           opacity: 0.35,
           width: 1
