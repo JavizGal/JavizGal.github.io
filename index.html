@@ -17,6 +17,12 @@
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
   <style>
+    @media (min-width: 1024px) {
+      #page-wrapper {
+        transform: scale(0.75);
+        transform-origin: top center;
+      }
+    }
     body {
       font-family: 'Orbitron', sans-serif;
       background-color: #000;
@@ -106,7 +112,7 @@
   </style>
 </head>
 <body>
-
+  <div id="page-wrapper">
   <div id="tsparticles"></div>
   <div class="cursor" id="cursor"></div>
 
@@ -237,5 +243,6 @@
   });
 
   </script>
+  </div>
 </body>
 </html>
