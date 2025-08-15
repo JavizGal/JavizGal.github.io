@@ -1,97 +1,190 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galería Automática</title>
+  <title>Galería – Banco SINGAPUR en C</title>
 
-  <!-- Swiper CSS -->
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Orbitron Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+
+  <!-- tsParticles -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+  <!-- SwiperJS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+    :root {
+      --accent: #ff0000;   /* rojo principal */
+      --accent-border: #cc0000;
+      --text: #ffffff;
+      --bg: #000000;
     }
 
-    /* Swiper */
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    #tsparticles {
+      position: fixed;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .cursor {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: var(--accent);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1000;
+      mix-blend-mode: difference;
+      transform: translate(-50%, -50%);
+    }
+
+    .neon-text {
+      color: var(--accent);
+      text-shadow:
+        0 0 6px var(--accent),
+        0 0 12px var(--accent),
+        0 0 24px var(--accent),
+        0 0 48px var(--accent);
+    }
+
+    /* Swiper personalización */
     .swiper {
-      width: 90%;
+      width: 100%;
       max-width: 1200px;
-      height: 500px;
+      padding: 2rem 0;
     }
 
     .swiper-slide {
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #222;
-      border-radius: 10px;
-      overflow: hidden;
+      transition: transform 0.5s ease, filter 0.5s ease;
     }
 
     .swiper-slide img {
-      width: 100%;
-      height: auto;
+      max-height: 70vh;
+      border-radius: 1rem;
+      border: 3px solid rgba(255, 0, 0, 0.5);
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+      transition: all 0.4s ease-in-out;
       object-fit: cover;
+    }
+
+    .swiper-slide-active img {
+      transform: scale(1.05);
+      box-shadow: 0 0 50px rgba(255, 0, 0, 0.8);
+      filter: brightness(1.1);
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: var(--accent);
+      text-shadow: 0 0 10px var(--accent);
+    }
+
+    .swiper-pagination-bullet {
+      background: var(--accent-border);
+      opacity: 0.7;
+    }
+    .swiper-pagination-bullet-active {
+      background: var(--accent);
+      opacity: 1;
     }
   </style>
 </head>
 <body>
-  <!-- Slider principal -->
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper" id="slides-container">
-      <!-- Las imágenes se agregarán aquí automáticamente -->
-    </div>
+  <div id="tsparticles"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+  <section class="text-center py-10 px-6">
+    <h1 class="text-4xl md:text-6xl neon-text font-bold mb-6">
+      Galería Banco SINGAPUR en C
+    </h1>
+    <p class="text-gray-300 max-w-3xl mx-auto mb-10">
+      Explora las capturas y detalles de este sistema de gestión bancaria en C puro.
+    </p>
+  </section>
+
+  <!-- Slider -->
+  <div class="swiper mySwiper mx-auto px-6">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="1.png" alt="Captura Banco SINGAPUR"></div>
+      <div class="swiper-slide"><img src="2.png" alt="Captura Banco SINGAPUR"></div>
+      <div class="swiper-slide"><img src="3.png" alt="Captura Banco SINGAPUR"></div>
+      <div class="swiper-slide"><img src="4.png" alt="Captura Banco SINGAPUR"></div>
+      <div class="swiper-slide"><img src="5.png" alt="Captura Banco SINGAPUR"></div>
+      <div class="swiper-slide"><img src="6.png" alt="Captura Banco SINGAPUR"></div>
+      <div class="swiper-slide"><img src="7.png" alt="Captura Banco SINGAPUR"></div>
+      <div class="swiper-slide"><img src="8.png" alt="Captura Banco SINGAPUR"></div>
+      <div class="swiper-slide"><img src="9.png" alt="Captura Banco SINGAPUR"></div>
+      <div class="swiper-slide"><img src="10.png" alt="Captura Banco SINGAPUR"></div>
+</div>
+
     <!-- Controles -->
-    <div class="swiper-pagination"></div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
   </div>
 
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
   <script>
-    const slidesContainer = document.getElementById("slides-container");
-    let index = 1;
+    // Partículas fondo rojo
+    tsParticles.load("tsparticles", {
+      background: { color: "#000000" },
+      fpsLimit: 60,
+      particles: {
+        color: { value: "#ff0000" },
+        links: {
+          enable: true,
+          color: "#ff0000",
+          distance: 140,
+          opacity: 0.35,
+          width: 1
+        },
+        move: { enable: true, speed: 1 },
+        number: { value: 85, density: { enable: true, area: 900 } },
+        opacity: { value: 0.28 },
+        shape: { type: "circle" },
+        size: { value: { min: 1, max: 3 } }
+      }
+    });
 
-    function cargarImagen(num) {
-      const img = new Image();
-      img.src = `img/${num}.png`; // Cambia la carpeta y extensión si es necesario
-      img.onload = () => {
-        const slide = document.createElement("div");
-        slide.classList.add("swiper-slide");
-        slide.appendChild(img);
-        slidesContainer.appendChild(slide);
-        cargarImagen(num + 1); // Cargar la siguiente imagen
-      };
-      img.onerror = () => {
-        console.log(`No hay más imágenes después de ${num - 1}.png`);
-        inicializarSwiper();
-      };
-    }
+    // Cursor personalizado
+    document.addEventListener("mousemove", (e) => {
+      const cursor = document.getElementById("cursor");
+      cursor.style.top = e.clientY + "px";
+      cursor.style.left = e.clientX + "px";
+    });
 
-    function inicializarSwiper() {
-      new Swiper(".mySwiper", {
-        loop: true,
-        centeredSlides: true,
-        slidesPerView: "auto",
-        spaceBetween: 30,
-        grabCursor: true,
-        autoplay: { delay: 3000, disableOnInteraction: false },
-        pagination: { el: ".swiper-pagination", clickable: true },
-        navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
-      });
-    }
-
-    cargarImagen(index);
+    // Inicializar Swiper
+    const swiper = new Swiper(".mySwiper", {
+      loop: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      spaceBetween: 30,
+      grabCursor: true,
+      autoplay: { delay: 3000, disableOnInteraction: false },
+      pagination: { el: ".swiper-pagination", clickable: true },
+      navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+    });
   </script>
 </body>
-</html>
+  </html>
