@@ -1,33 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antes de Continuar – Super Smash Bros</title>
 
-  <!-- Typed.js -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+
+  <!-- tsParticles -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
   <style>
+    :root{
+      --accent: #ff7a00;  /* naranja principal */
+      --accent-border: #ff6a00;
+      --text: #ffffff;
+      --bg: #000000;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
     body {
       font-family: 'Orbitron', sans-serif;
-      background-color: #000;
+      background-color: var(--bg);
+      color: var(--text);
+      overflow: hidden;         /* sin scroll: pantalla completa */
       overflow-x: hidden;
       cursor: none;
-      color: white;
       margin: 0;
       padding: 0;
     }
 
+    #tsparticles {
+      position: fixed;
+      z-index: -1;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
     .neon-text {
-      color: #00f7ff;
+      color: var(--accent);
       text-shadow:
-        0 0 5px #00f7ff,
-        0 0 10px #00f7ff,
-        0 0 20px #00f7ff,
-        0 0 40px #00f7ff;
+        0 0 6px var(--accent),
+        0 0 12px var(--accent),
+        0 0 24px var(--accent),
+        0 0 48px var(--accent);
     }
 
     .neon-button {
-      border: 2px solid #ff0044;
+      border: 2px solid var(--accent-border);
+      padding: 0.85rem 2.25rem;
+      color: var(--accent);
+      text-shadow: 0 0 10px var(--accent);
+      box-shadow: 0 0 6px var(--accent);
+      transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: 700;
+      user-select: none;
+      border-radius: 0.75rem;
+    }
+    .neon-button:hover,
+    .neon-button:focus {
+      background: var(--accent);
+      color: #000;
+      box-shadow: 0 0 20px var(--accent), 0 0 40px var(--accent);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .cursor {
+      position: fixed;
+      width: 18px;
+      height: 18px;
+      background: var(--accent);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1000;
+      mix-blend-mode: difference;
+      transform: translate(-50%, -50%);
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.25rem !important; }
+      p  { font-size: 1rem !important; }
+      .neon-button { padding: 0.75rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div id="tsparticles"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+  <main class="h-screen w-full flex flex-col justify-center items-center text-center px-6">
+    <h1 class="text-4xl md:text-6xl neon-text mb-6 font-extrabold">
+      Antes de continuar…
+    </h1>
+    <p class="text-gray-300 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
+      Este proyecto de <span class="neon-text">Super Smash Bros</span> está optimizado para pantallas grandes.
+      <br />
+      <span class="font-bold" style="color:#ffd199;">Te recomiendo activar el modo computadora</span>
+      si lo estás viendo desde un celular o tablet.
+    </p>
+
+    <!-- Ajusta el href al index real del proyecto -->
+    <a href="index.html" class="neon-button" role="button" tabindex="0" aria-label="Entrar al proyecto Super Smash Bros">
+      Entrar al proyecto
+    </a>
+  </main>
+
+  <script>
+    // Fondo de partículas naranja
+    tsParticles.load("tsparticles", {
+      background: { color: "#000000" },
+      fpsLimit: 60,
+      particles: {
+        color: { value: "#ff7a00" },
+        links: {
+          enable: true,
+          color: "#ff7a00",
+          distance: 140,
+          opacity: 0.35,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 1
+        },
+        number: {
+          value: 85,
+          density: { enable: true, area: 900 }
+        },
+        opacity: { value: 0.28 },
+        shape: { type: "circle" },
+        size: { value: { min: 1, max: 3 } }
+      }
+    });
+
+    // Cursor personalizado
+    document.addEventListener("mousemove", (e) => {
+      const cursor = document.getElementById("cursor");
+      cursor.style.top = e.clientY + "px";
+      cursor.style.left = e.clientX + "px";
+    });
+
+    // Accesibilidad: activar botón con Enter/Espacio
+    const btn = document.querySelector('.neon-button');
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        btn.click();
+      }
+    });
+  </script>
+</body>
+</html>
+    .neon-text {
+      color: #9b59b6;
+      text-shadow:
+        0 0 5px #9b59b6,
+        0 0 10px #9b59b6,
+        0 0 20px #9b59b6,
+        0 0 40px #9b59b6;
+    }
+
+    .neon-button {
+      border: 2px solid #8e44ad;
       padding: 0.75rem 2rem;
-      color: #ff0044;
-      text-shadow: 0 0 10px #ff0044;
-      box-shadow: 0 0 5px #ff0044;
+      color: #8e44ad;
+      text-shadow: 0 0 10px #8e44ad;
+      box-shadow: 0 0 5px #8e44ad;
       transition: all 0.3s ease-in-out;
       text-decoration: none;
       display: inline-block;
@@ -38,56 +185,22 @@
 
     .neon-button:hover,
     .neon-button:focus {
-      background: #ff0044;
+      background: #8e44ad;
       color: black;
-      box-shadow: 0 0 20px #ff0044, 0 0 40px #ff0044;
+      box-shadow: 0 0 20px #8e44ad, 0 0 40px #8e44ad;
       outline: none;
-    }
-
-    .glass-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(0, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
-      transition: 0.3s ease-in-out;
-      padding: 1.5rem;
-      border-radius: 1rem;
-      color: #d1d5db;
-      text-decoration: none;
-      display: block;
-    }
-
-    .glass-card:hover {
-      box-shadow: 0 0 30px rgba(255, 0, 100, 0.8);
-      transform: scale(1.03);
-      color: white;
-    }
-
-    #tsparticles {
-      position: fixed;
-      z-index: -2;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
     }
 
     .cursor {
       position: fixed;
       width: 20px;
       height: 20px;
-      background: #00f7ff;
+      background: #9b59b6;
       border-radius: 50%;
       pointer-events: none;
       z-index: 1000;
       mix-blend-mode: difference;
       transform: translate(-50%, -50%);
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.5rem !important;
-      }
     }
   </style>
 </head>
@@ -96,80 +209,27 @@
   <div id="tsparticles"></div>
   <div class="cursor" id="cursor"></div>
 
-  <section class="h-screen flex flex-col justify-center items-center text-center px-6 md:px-4 z-10 relative">
-    <h1 class="text-5xl md:text-7xl neon-text mb-4 font-extrabold leading-tight">
-      <span id="typed"></span>
+  <section class="h-screen flex flex-col justify-center items-center text-center px-6">
+    <h1 class="text-4xl md:text-6xl neon-text mb-6 font-bold">
+      Antes de continuar...
     </h1>
-    
-    <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-xl">
-      Trabajo dónde la tecnología respira, decide y se mueve.
+    <p class="text-gray-300 text-lg md:text-xl max-w-2xl mb-8">
+      Este proyecto está optimizado para pantallas grandes.<br />
+      <span class="text-pink-400 font-bold">Te recomiendo activar el modo computadora</span>
+      si estás viendo esto desde un celular o tablet.
     </p>
-    
-    <a href="#sobre-mi" class="neon-button" role="button" tabindex="0">Sobre mí</a>
-    <a href="#proyectos" class="neon-button" role="button" tabindex="0">Ver Proyectos</a>
+    <a href="index.html" class="neon-button">Continuar de todos modos</a>
   </section>
-
-  <section id="sobre-mi" class="py-20 px-6 md:px-20 max-w-5xl mx-auto z-10 relative">
-    <h2 class="text-4xl neon-text mb-6 font-semibold">Sobre mí</h2>
-    <p class="text-gray-300 leading-relaxed text-lg max-w-3xl mx-auto">
-        Soy desarrollador web full stack con sólida experiencia en backend y en la creación de bases de datos eficientes. Me especializo en PHP, Laravel y MySQL, además de dominar HTML, CSS y JavaScript para el desarrollo de interfaces modernas, atractivas y funcionales.
-        <br><br>
-        Tengo experiencia en Java, Spring y Spring Boot, así como en el uso de PostgreSQL para bases de datos avanzadas. Manejo Git y GitHub para control de versiones y trabajo colaborativo, integrando buenas prácticas de desarrollo en entornos profesionales.
-        <br><br>
-        Cuento con conocimientos en Linux, lo que me permite administrar servidores y optimizar entornos de desarrollo. Además, he trabajado con C y ESP32, ampliando mis capacidades hacia soluciones que integran hardware y software. Mi enfoque está en crear proyectos de alta calidad, con buen rendimiento y adaptados a las necesidades reales de los usuarios.
-    </p>
-  </section>
-
-  <section id="proyectos" class="py-20 px-6 md:px-20 max-w-6xl mx-auto relative z-10">
-    <h2 class="text-4xl text-center neon-text mb-10 font-semibold">Proyectos Épicos</h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-      <a href="./Mantra/AntesDelIndex.html" class="glass-card">
-        <h3 class="text-2xl text-green-400 mb-2 font-semibold">🎵 Mantra – Plataforma musical</h3>
-        <p>Web tipo Spotify para explorar música y crear playlists.</p>
-      </a>
-      
-      <a href="./Super Smash Bros Warped/AntesDelIndex.html" class="glass-card">
-        <h3 class="text-2xl text-yellow-400 mb-2 font-semibold">🎮 Super Smash Bros Warped (Java)</h3>
-        <p>Videojuego estilo arcade multijugador, programado en Java.</p>
-      </a>
-      
-      <a href="./Predicción de emociones/AntesDelIndex.html" class="glass-card">
-        <h3 class="text-2xl text-pink-500 mb-2 font-semibold">🧠 Predicción de emociones (BPM)</h3>
-        <p>App que interpreta emociones humanas a partir de la frecuencia cardíaca en tiempo real.</p>
-      </a>
-
-      <a href="./Banco Singapour/AntesDelIndex.html" class="glass-card">
-        <h3 class="text-2xl text-red-600 mb-2 font-semibold">🏦 Banco SINGAPUR en C</h3>
-        <p>Gestión de clientes, retiros, depósitos y archivos, con lógica sólida en C puro.</p>
-      </a>
-      
-      <a href="./Carnaval de Chimalhuacán Ujajay/AntesDelIndex.html" class="glass-card md:col-span-2">
-        <h3 class="text-2xl text-fuchsia-400 mb-2 font-semibold">🎭 Carnaval de Chimalhuacán Ujajay</h3>
-        <p>Sitio dedicado a cultura festiva con fotos, videos y eventos.</p>
-      </a>
-    </div>
-  </section>
-
-  <section class="py-20 text-center max-w-3xl mx-auto z-10 relative">
-    <h2 class="text-4xl neon-text mb-6 font-semibold">Contacto</h2>
-    <p class="text-gray-300 mb-8">¿Listo para conectar? Estoy disponible para ti.</p>
-    <a href="mailto:javiergalindocampos1@gmail.com" class="neon-button" role="button" tabindex="0">Enviar correo</a>
-  </section>
-
-  <footer class="text-center text-gray-500 py-6 text-sm z-10 relative">
-    © 2025 Javier Galindo. Hecho con ⚡ y código.
-  </footer>
 
   <script>
     tsParticles.load("tsparticles", {
       background: { color: "#000" },
       fpsLimit: 60,
       particles: {
-        color: { value: "#00f7ff" },
+        color: { value: "#9b59b6" },
         links: {
           enable: true,
-          color: "#00f7ff",
+          color: "#9b59b6",
           distance: 150,
           opacity: 0.4,
           width: 1
@@ -191,27 +251,11 @@
       }
     });
 
-    new Typed("#typed", {
-      strings: ["Hola, soy Javier.", "Desarrollador Full Stack."],
-      typeSpeed: 50,
-      backSpeed: 30,
-      loop: true
-    });
-
     document.addEventListener("mousemove", (e) => {
       const cursor = document.getElementById("cursor");
       cursor.style.top = e.clientY + "px";
       cursor.style.left = e.clientX + "px";
     });
-
-    document.querySelector('a[href="#proyectos"]').addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector('#proyectos');
-      window.scrollTo({
-        top: target.offsetTop,
-        behavior: 'auto'
-      });
-    });
   </script>
 </body>
-</html>
+</html> este codigo esa bien pero las partículas son moradas, puedes cambiarlas a naranjas?
