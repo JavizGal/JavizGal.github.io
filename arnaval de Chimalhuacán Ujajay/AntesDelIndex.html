@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antes de Continuar – Carnaval de Chimalhuacán Ulijay</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+
+  <!-- tsParticles -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+  <style>
+    :root {
+      --accent: #9b59b6;  /* morado principal */
+      --accent-border: #8e44ad;
+      --text: #ffffff;
+      --bg: #000000;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      overflow: hidden;
+      overflow-x: hidden;
+      cursor: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    #tsparticles {
+      position: fixed;
+      z-index: -1;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .neon-text {
+      color: var(--accent);
+      text-shadow:
+        0 0 6px var(--accent),
+        0 0 12px var(--accent),
+        0 0 24px var(--accent),
+        0 0 48px var(--accent);
+    }
+
+    .neon-button {
+      border: 2px solid var(--accent-border);
+      padding: 0.85rem 2.25rem;
+      color: var(--accent);
+      text-shadow: 0 0 10px var(--accent);
+      box-shadow: 0 0 6px var(--accent);
+      transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: 700;
+      user-select: none;
+      border-radius: 0.75rem;
+    }
+    .neon-button:hover,
+    .neon-button:focus {
+      background: var(--accent);
+      color: #000;
+      box-shadow: 0 0 20px var(--accent), 0 0 40px var(--accent);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .cursor {
+      position: fixed;
+      width: 18px;
+      height: 18px;
+      background: var(--accent);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1000;
+      mix-blend-mode: difference;
+      transform: translate(-50%, -50%);
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.25rem !important; }
+      p  { font-size: 1rem !important; }
+      .neon-button { padding: 0.75rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div id="tsparticles"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+  <main class="h-screen w-full flex flex-col justify-center items-center text-center px-6">
+    <h1 class="text-4xl md:text-6xl neon-text mb-6 font-extrabold">
+      Antes de continuar…
+    </h1>
+    <p class="text-gray-300 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
+      Este sitio dedicado al <span class="neon-text">Carnaval de Chimalhuacán Ulijay</span> está optimizado para pantallas grandes.
+      <br />
+      <span class="font-bold" style="color: #b57edc;">Te recomiendo activar el modo computadora</span>
+      si lo estás viendo desde un celular o tablet.
+    </p>
+
+    <!-- Ajusta el href al index real del proyecto -->
+    <a href="./index.html" class="neon-button" role="button" tabindex="0" aria-label="Entrar al sitio del Carnaval de Chimalhuacán Ulijay">
+      Entrar al sitio
+    </a>
+  </main>
+
+  <script>
+    // Fondo de partículas moradas
+    tsParticles.load("tsparticles", {
+      background: { color: "#000000" },
+      fpsLimit: 60,
+      particles: {
+        color: { value: "#9b59b6" },
+        links: {
+          enable: true,
+          color: "#9b59b6",
+          distance: 140,
+          opacity: 0.35,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 1
+        },
+        number: {
+          value: 85,
+          density: { enable: true, area: 900 }
+        },
+        opacity: { value: 0.28 },
+        shape: { type: "circle" },
+        size: { value: { min: 1, max: 3 } }
+      }
+    });
+
+    // Cursor personalizado
+    document.addEventListener("mousemove", (e) => {
+      const cursor = document.getElementById("cursor");
+      cursor.style.top = e.clientY + "px";
+      cursor.style.left = e.clientX + "px";
+    });
+
+    // Accesibilidad: activar botón con Enter/Espacio
+    const btn = document.querySelector('.neon-button');
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        btn.click();
+      }
+    });
+  </script>
+</body>
+</html>
