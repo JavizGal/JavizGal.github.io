@@ -68,26 +68,29 @@
 
     /* Swiper personalización */
     .swiper {
-      width: 100%;
-      max-width: 1200px;
-      padding: 2rem 0;
-    }
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem 0;
+  height: 70vh; /* Set a consistent height for the slider */
+}
 
-    .swiper-slide {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: transform 0.5s ease, filter 0.5s ease;
-    }
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ensure the slide takes the full height of the swiper */
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
 
-    .swiper-slide img {
-      max-height: 70vh;
-      border-radius: 1rem;
-      border: 3px solid rgba(236, 72, 153, 0.5);
-      box-shadow: 0 0 20px rgba(236, 72, 153, 0.5);
-      transition: all 0.4s ease-in-out;
-      object-fit: cover;
-    }
+.swiper-slide img {
+  max-height: 70vh;
+  max-width: 100%; /* Prevent images from overflowing horizontally */
+  border-radius: 1rem;
+  border: 3px solid rgba(255, 122, 0, 0.5);
+  box-shadow: 0 0 20px rgba(255, 122, 0, 0.5);
+  transition: all 0.4s ease-in-out;
+  object-fit: contain; /* Changed from cover to contain */
+}
 
     .swiper-slide-active img {
       transform: scale(1.05);
